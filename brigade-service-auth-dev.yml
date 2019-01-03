@@ -1,0 +1,135 @@
+spring:
+  mvc:
+    date-format: yyyy-MM-dd HH:mm:ss
+  jackson:
+    joda-date-time-format: yyyy-MM-dd HH:mm:ss
+    date-format: yyyy-MM-dd HH:mm:ss
+  datasource:
+    url: jdbc:mysql://120.79.244.56:3306/brigade?characterEncoding=utf8&useSSL=false
+
+mybatis:
+  type-aliases-package: io.brigade.provider.model
+  mapper-locations: classpath:mapper/*.xml,classpath*:sdk/mapper/*.xml
+  configuration:
+    map-underscore-to-camel-case: true
+
+mapper:
+  mappers: io.brigade.core.mybatis.MyMapper
+  not-empty: false
+  identity: MYSQL
+
+pagehelper:
+  helperDialect: mysql
+  reasonable: true
+  supportMethodsArguments: true
+  params: count=countSql
+
+security:
+  oauth2:
+    client:
+      clientId: brigade-service-auth
+      clientSecret: brigadeClientSecret
+      access-token-uri: http://localhost:7979/sac/oauth/token
+      user-authorization-uri: http://localhost:7979/sac/oauth/authorize
+    resource:
+      id: brigade-resource-auth
+      filter-order: 3
+    jwt:
+      key-uri: http://localhost:8090/sac/oauth/token_key
+
+brigade:
+  enableSqlLogInterceptor: false
+  aliyun:
+    rocketMq:
+      enable: true
+      reliableMessageConsumer: false
+      reliableMessageProducer: true
+      instanceName: brigade-service-auth
+      consumerGroup: CID_SAC
+      producerGroup: PID_SAC
+  auth:
+    rest-pwd-url: http://localhost/resetPwd?resetPwdKey=
+    active-user-url: http://localhost:7979/sac/auth/activeUser/
+    refresh-token-url: http://localhost:7979/sac/oauth/token
+  token:
+    interceptor:
+      enable: true
+  oauth2:
+    jwtSigningKey: brigade
+    client:
+      id: ${security.oauth2.resource.id}
+      accessTokenUrl: ${security.oauth2.client.access-token-uri}
+      clientId: ${security.oauth2.client.clientId}
+      clientSecret: ${security.oauth2.client.clientSecret}
+      clientAuthenticationScheme: header
+  security:
+    social:
+      filterProcessesUrl: /auth/callback
+#      qq:
+#        app-id: 101431061
+#        app-secret: 0154c848f45fc705412462d4f99a592c
+#        providerId: qq
+#      weixin:
+#        app-id: wxd99431bbff8305a0
+#        app-secret: 60f78681d063590a469f1b297feff3c4
+#        providerId: weixin
+    code:
+      image:
+        expireIn: 180
+        url: /auth/register,/auth/submitResetPwdEmail,/auth/code/sms
+      sms:
+        expireIn: 600
+        url: /uac/auth/submitResetPwdPhone
+        mobileMaxSendCount: 1
+        ipMaxSendCount: 2
+        totalMaxSendCount: 3
+      email:
+        expireIn: 1800
+        url: /auth/code/email
+    oauth2:
+      tokenStore: jwt
+      clients[0]:
+        clientId: brigade-service-auth
+        clientSecret: brigadeClientSecret
+        accessTokenValidateSeconds: 7200
+        scope: "*"
+      clients[1]:
+        clientId: brigade-client-uac
+        clientSecret: brigadeClientSecret
+        accessTokenValidateSeconds: 7200
+        scope: "*"
+      clients[2]:
+        clientId: brigade-browser
+        clientSecret: brigadeClientSecret
+        accessTokenValidateSeconds: 7200
+        scope: "*"
+      clients[3]:
+        clientId: brigade-client-gateway
+        clientSecret: brigadeClientSecret
+        accessTokenValidateSeconds: 7200
+        scope: "*"
+      clients[4]:
+        clientId: brigade-client-zipkin
+        clientSecret: brigadeClientSecret
+        accessTokenValidateSeconds: 7200
+        scope: "*"
+      clients[5]:
+        clientId: brigade-client-mdc
+        clientSecret: brigadeClientSecret
+        accessTokenValidateSeconds: 7200
+        scope: "*"
+      clients[6]:
+        clientId: brigade-client-omc
+        clientSecret: brigadeClientSecret
+        accessTokenValidateSeconds: 7200
+        scope: "*"
+      clients[7]:
+        clientId: brigade-client-opc
+        clientSecret: brigadeClientSecret
+        accessTokenValidateSeconds: 7200
+        scope: "*"
+      clients[8]:
+        clientId: brigade-client-tpc
+        clientSecret: brigadeClientSecret
+        accessTokenValidateSeconds: 7200
+        scope: "*"

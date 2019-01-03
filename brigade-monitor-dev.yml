@@ -1,0 +1,42 @@
+logging:
+  level:
+    org.springframework.cloud.netflix.zuul.filters.post.SendErrorFilter: error
+
+turbine:
+  app-config: brigade-gateway,brigade-eureka,brigade-service-auth #收集监控信息的服务名
+#    combine-host: true
+  stream:
+    port: 8041
+#  aggregator:
+#    clusterConfig: brigade-gateway,brigade-eureka    # 需要监控的服务集群名
+  combine-host-port: true
+  cluster-name-expression: new String('default') #集群名称
+
+spring:
+  boot:
+    admin:
+      client:
+        metadata:
+          user:
+            name: ${security.user.name}
+            password: ${security.user.password}
+      monitor:
+        period: 60000
+      discovery:
+        enabled: true
+      notify:
+        mail:
+          to: abelethan@126.com
+          from: abelethan@vip.qq.com
+      turbine:
+        clusters: default
+        location: http://brigade-monitor:${turbine.stream.port}
+      routes:
+        endpoints: env,metrics,dump,jolokia,info,configprops,trace,logfile,refresh,flyway,liquibase,heapdump,loggers,auditevents,hystrix.stream
+
+security:
+  user:
+    name: chongqing
+    password: brigade
+  basic:
+    enabled: false

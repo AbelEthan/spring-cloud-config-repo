@@ -1,0 +1,97 @@
+spring:
+  http:
+    encoding:
+      force: true
+      charset: UTF-8
+      enabled: true
+    multipart:
+      enabled: true
+      max-request-size: 50MB
+      max-file-size: 50MB
+  mvc:
+    date-format: yyyy-MM-dd HH:mm:ss
+  jackson:
+    joda-date-time-format: yyyy-MM-dd HH:mm:ss
+    date-format: yyyy-MM-dd HH:mm:ss
+  datasource:
+    url: jdbc:mysql://120.79.244.56:3306/brigade?useUnicode=true&characterEncoding=UTF-8
+
+liquibase:
+  change-log: classpath:liquibase/index.xml
+  user: ${spring.datasource.username}
+  password: ${spring.datasource.password}
+  url: ${spring.datasource.url}
+
+mybatis:
+  type-aliases-package: io.brigade.provider.model.domain
+  mapper-locations: classpath:mapper/*.xml,classpath*:sdk/mapper/*.xml
+  configuration:
+    map-underscore-to-camel-case: true
+
+mapper:
+  mappers: io.brigade.core.mybatis.MyMapper
+  not-empty: false
+  identity: MYSQL
+
+pagehelper:
+  helperDialect: mysql
+  reasonable: true
+  supportMethodsArguments: true
+  params: count=countSql
+
+security:
+  oauth2:
+    client:
+      clientId: brigade-client-opc
+      clientSecret: brigadeClientSecret
+      access-token-uri: http://brigade-gateway:7979/uac/oauth/token
+      user-authorization-uri: http://brigade-gateway:7979/uac/oauth/authorize
+    resource:
+      user-info-uri: http://brigade-gateway:7979/uac/user
+      prefer-token-info: false
+      jwt:
+        key-uri: http://brigade-provider-uac:8000/oauth/token_key
+
+brigade:
+  enableSqlLogInterceptor: false
+  token:
+    interceptor:
+      enable: true
+  zk:
+    zkAddressList: brigade-provider-zk:2181
+  qiniu:
+    key:
+      accessKey: yourQiniuAccessKey
+      secretKey: yourQiniuSecretKey
+    oss:
+      privateHost:
+      publicHost:
+      fileMaxSize: 104857600
+  oauth2:
+    jwtSigningKey: brigade
+    client:
+      id: ${security.oauth2.resource.id}
+      accessTokenUrl: ${security.oauth2.client.access-token-uri}
+      clientId: ${security.oauth2.client.clientId}
+      clientSecret: ${security.oauth2.client.clientSecret}
+      clientAuthenticationScheme: header
+      tokenStore: jwt
+  aliyun:
+    key:
+      accessKeyId: yourAliyunAccessKey
+      accessKeySecret: yourAliyunKeySecret
+    rocketMq:
+      enable: true
+      reliableMessageConsumer: true
+      reliableMessageProducer: false
+      namesrvAddr: http://118.25.230.217:9876
+      instanceName: brigade-provider-opc
+      consumerGroup: CID_OPC
+      producerGroup: PID_OPC
+    sms:
+      signName: 快乐学习网
+      regionId: cn-beijing
+      endpoint:
+      endpointName: cn-beijing
+      product: Dysmsapi
+      domain: dysmsapi.aliyuncs.com
