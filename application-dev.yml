@@ -20,8 +20,8 @@ spring:
     publisher-confirms: true
     publisher-returns: true
   redis:
-    host: 120.79.244.56
-    password: Abel123
+    host: 192.168.0.135
+    password: sccdredis
     port: 6379
     timeout: 0
   datasource:
@@ -116,7 +116,7 @@ brigade:
       accessKeyId: 'your aliyun accessKeyId'
       accessKeySecret: 'your aliyun accessKeySecret'
     rocketMq:
-      namesrvAddr: http://120.79.244.56:9876
+      namesrvAddr: http://192.168.0.135:9876
     sms:
       signName: 快乐学习网
       regionId: cn-beijing
@@ -138,4 +138,4 @@ brigade:
 #      pcPath: /data/file/qrCode/alipay
 #      qiniuPath: alipay/QRCode/
   zk:
-    zkAddressList: 120.79.244.56:2181
+    zkAddressList: 192.168.0.135:2181

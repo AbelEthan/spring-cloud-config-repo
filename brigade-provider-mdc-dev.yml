@@ -7,7 +7,7 @@ spring:
   cache:
     cache-names: mdc-cache
   datasource:
-    url: jdbc:mysql://120.79.244.56:3306/brigade_mdc?characterEncoding=utf8&useSSL=false
+    url: jdbc:mysql://192.168.0.135:3306/brigade_mdc?characterEncoding=utf8&useSSL=false
 
 liquibase:
   change-log: classpath:liquibase/index.xml
