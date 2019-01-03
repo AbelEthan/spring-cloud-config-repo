@@ -2,7 +2,7 @@ spring:
   cache:
     cache-names: tpc-cache
   datasource:
-    url: jdbc:mysql://120.79.244.56:3306/brigade?characterEncoding=utf8&useSSL=false
+    url: jdbc:mysql://120.79.244.56:3306/brigade_tpc?characterEncoding=utf8&useSSL=false
 
 liquibase:
   change-log: classpath:liquibase/index.xml
