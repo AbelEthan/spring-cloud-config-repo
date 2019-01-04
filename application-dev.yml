@@ -15,8 +15,8 @@ spring:
   rabbitmq:
     host: 120.79.244.56
     port: 5672
-    username: abelethan
-    password: Abel123
+    username: guest
+    password: guest
     publisher-confirms: true
     publisher-returns: true
   redis:
@@ -39,7 +39,7 @@ spring:
       stat-view-servlet:
         allow:
         login-username: root
-        login-password: abel123
+        login-password: sccdmysql
   mail:
     host: smtp.qq.com
     username: abelethan@vip.qq.com
