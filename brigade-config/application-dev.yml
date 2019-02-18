@@ -21,7 +21,7 @@ spring:
     publisher-returns: true
   redis:
     host: 192.168.0.135
-    password: sccdredis
+    password: scjjcredis
     port: 6379
     timeout: 0
   datasource:
