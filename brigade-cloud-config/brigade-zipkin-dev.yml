@@ -1,0 +1,43 @@
+spring:
+  datasource:
+    url: jdbc:mysql://192.168.0.135:3306/brigade_zipkin?characterEncoding=utf8&useSSL=false
+#    schema: classpath:mysql.sql
+  sleuth:
+    enabled: false
+  zipkin:
+    locator:
+      discovery:
+        enabled: true
+
+zipkin:
+  collector:
+    rabbitmq:
+      addresses: 120.79.244.56:5672
+      username: guest
+      password: guest
+      queue: zipkin
+  storage:
+    type: mysql
+
+security:
+  oauth2:
+    client:
+      clientId: brigade-service-auth
+      clientSecret: brigadeClientSecret
+      access-token-uri: http://brigade-gateway:7979/uac/oauth/token
+      user-authorization-uri: http://brigade-gateway:7979/uac/oauth/authorize
+    resource:
+      user-info-uri: http://brigade-gateway:7979/uac/user
+      prefer-token-info: false
+      jwt:
+        key-uri: http://brigade-provider-uac:8000/oauth/token_key
+
+brigade:
+  oauth2:
+    client:
+      id: ${security.oauth2.resource.id}
+      accessTokenUrl: ${security.oauth2.client.access-token-uri}
+      clientId: ${security.oauth2.client.clientId}
+      clientSecret: ${security.oauth2.client.clientSecret}
+      clientAuthenticationScheme: header
+      tokenStore: jwt
