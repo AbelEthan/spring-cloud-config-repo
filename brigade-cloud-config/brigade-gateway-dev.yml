@@ -8,37 +8,3 @@ spring:
       enabled: true
       max-request-size: 50MB
       max-file-size: 50MB
-      
- zuul:
-  host:
-    socket-timeout-millis: 60000
-    connect-timeout-millis: 60000
-  forceOriginalQueryStringEncoding: true
-  routes:
-    manager-route:
-      path: /manager/**
-      sensitiveHeaders:
-#      strip-prefix: false
-      serviceId: brigade-provider-manager
-      ribbon:
-        eager-load:
-          enabled: true
-        MaxAutoRetries: 1
-        MaxAutoRetriesNextServer: 2
-        OkToRetryOnAllOperations: false
-        ConnectTimeout: 10000
-        ReadTimeout: 10000
-    auth-route:
-      path: /auth/**
-      sensitiveHeaders:
-      serviceId: brigade-auth
-      ribbon:
-        eager-loal:
-          enabled: true
-      MaxAutoRetries: 1
-      MaxAutoRetriesNextServer: 2
-      OkToRetryOnAllOperations: false
-      ConnectTimeout: 10000
-      ReadTimeout: 10000
-  add-proxy-headers: true
-  add-host-header: true
