@@ -13,14 +13,14 @@ spring:
     proxy-target-class: true
     auto: true
   rabbitmq:
-    host: 120.79.244.56
+    host: 192.168.0.158
     port: 5672
     username: guest
     password: guest
     publisher-confirms: true
     publisher-returns: true
   redis:
-    host: 192.168.0.135
+    host: 192.168.0.158
     password: scjjcredis
     port: 6379
     timeout: 0
@@ -125,4 +125,4 @@ brigade:
       product: 'your sms product'
       domain: dysmsapi.aliyuncs.com
   zk:
-    zkAddressList: 192.168.0.135:2181
+    zkAddressList: 192.168.0.158:2181
