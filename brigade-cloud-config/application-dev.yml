@@ -106,7 +106,7 @@ info:
   作者: AbelEthan
   邮件: abelethan@126.com, abelethan@sina.cn, abelethan@aliyun.com, abelethan@vip.qq.com
 
-brigade:
+ignore:
   auth:
     jwt:
       expiredRemainMinutes: 20
