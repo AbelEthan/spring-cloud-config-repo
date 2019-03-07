@@ -94,7 +94,7 @@ feign:
 ribbon:
   eager-load:
     enabled: true
-    clients: panda-auth,brigade-privider-manager
+    clients: brigade-auth,brigade-privider-manager
   Httpclient:
     enabled: true
   OkHttp:
