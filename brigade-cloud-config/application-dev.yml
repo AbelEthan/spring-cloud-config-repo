@@ -94,7 +94,7 @@ feign:
 ribbon:
   eager-load:
     enabled: true
-    clients: brigade-auth,brigade-provider-manager
+    clients: brigade-auth,brigade-provider-manager,brigade-provider-wechat
   Httpclient:
     enabled: true
   OkHttp:
