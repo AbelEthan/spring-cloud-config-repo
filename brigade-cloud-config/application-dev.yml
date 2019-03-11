@@ -25,7 +25,7 @@ spring:
     port: 6379
     timeout: 5000
   datasource:
-    driver-class-name: com.mysql.jdbc.Driver
+    driver-class-name: com.mysql.cj.jdbc.Driver
     filters: stat,wall
     druid:
       initial-size: 50
@@ -94,7 +94,7 @@ feign:
 ribbon:
   eager-load:
     enabled: true
-    clients: brigade-auth,brigade-provider-manager,brigade-provider-wechat
+    clients: brigade-auth,brigade-provider-manager
   Httpclient:
     enabled: true
   OkHttp:
