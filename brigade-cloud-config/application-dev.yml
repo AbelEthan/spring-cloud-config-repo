@@ -99,8 +99,8 @@ ribbon:
     enabled: true
   OkHttp:
     enabled: false
-  ReadTimeout: 60000
-  ConnectTimeout: 60000
+  ReadTimeout: 10000
+  ConnectTimeout: 10000
 
 hystrix:
   threadpool:
