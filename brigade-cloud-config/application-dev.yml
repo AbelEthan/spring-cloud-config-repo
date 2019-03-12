@@ -76,45 +76,30 @@ spring:
 feign:
   hystrix:
     enabled: true
-  okhttp:
-    enabled: false
-  httpclient:
-    enabled: true
   client:
     config:
-      feignName:
-        connectTimeout: 30000
-        readTimeout: 30000
-  compression:
-    request:
-      enabled: true
-    response:
-      enabled: true
+      default:
+        connectTimeout: 5000
+        readTimeout: 5000
 
 ribbon:
   eager-load:
     enabled: true
-    clients: brigade-auth,brigade-provider-manager
-  Httpclient:
-    enabled: true
-  OkHttp:
-    enabled: false
-  ReadTimeout: 10000
-  ConnectTimeout: 10000
+  MaxAutoRetries: 1
+  MaxAutoRetriesNextServer: 2
+  OkToRetryOnAllOperations: false
+  ConnectTimeout: 60000
+  ReadTimeout: 20000
 
 hystrix:
-  threadpool:
-    default:
-      coreSize: 500
-      maxQueueSize: 1000
-      queueSizeRejectionThreshold: 800
   command:
     default:
       execution:
+        timeout:
+          enabled: true
         isolation:
           thread:
-            timeoutInMilliseconds: 60000
-
+            timeoutInMilliseconds: 20000
 info:
   软件著作权: brigade重庆文旅分布式微服务平台
   作者: AbelEthan
