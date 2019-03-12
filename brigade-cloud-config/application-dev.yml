@@ -13,10 +13,10 @@ spring:
     proxy-target-class: true
     auto: true
   rabbitmq:
-    host: 192.168.0.158
+    host: 120.79.244.56
     port: 5672
-    username: guest
-    password: guest
+    username: cloud-demo
+    password: abelethan
     publisher-confirms: true
     publisher-returns: true
   redis:
