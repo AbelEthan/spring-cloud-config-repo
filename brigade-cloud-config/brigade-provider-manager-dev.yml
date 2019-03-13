@@ -5,7 +5,7 @@ spring:
     joda-date-time-format: yyyy-MM-dd HH:mm:ss
     date-format: yyyy-MM-dd HH:mm:ss
   cache:
-    cache-names: uac-cache
+    cache-names: manager-cache
   datasource:
     url: jdbc:mysql://192.168.0.158:3306/brigade_demo?characterEncoding=utf8&useSSL=false
 
