@@ -7,7 +7,7 @@ spring:
   cache:
     cache-names: uac-cache
   datasource:
-    url: jdbc:mysql://192.168.0.158:3306/brigade_cloud?characterEncoding=utf8&useSSL=false
+    url: jdbc:mysql://192.168.0.158:3306/brigade_demo?characterEncoding=utf8&useSSL=false
 
 mybatis:
   type-aliases-package: io.brigade.provider.model.domain
