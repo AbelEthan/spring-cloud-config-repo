@@ -20,6 +20,8 @@ spring:
     publisher-confirms: true
     publisher-returns: true
   redis:
+    cache:
+      expiration: 3601
     host: 192.168.0.158
     password: scjjcredis
     port: 6379
