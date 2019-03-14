@@ -119,6 +119,16 @@ info:
   邮件: abelethan@126.com, abelethan@sina.cn, abelethan@aliyun.com, abelethan@vip.qq.com
 
 ignore:
+  urls:
+  - /token/**
+  - /mobile/**
+  - /**/*.css
+  - /auth/**
+  - /refresh/**
+  - /swagger-ui.html
+  - /swagger-resources/**
+  - /*/v2/api-docs
+  - /webjars/**
   auth:
     jwt:
       expiredRemainMinutes: 20
