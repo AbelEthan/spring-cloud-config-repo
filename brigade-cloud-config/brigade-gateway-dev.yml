@@ -4,3 +4,13 @@ spring:
       charset: UTF-8
   datasource:
     url: jdbc:mysql://192.168.0.158:3306/brigade_demo?characterEncoding=utf8&useSSL=false
+ignore:
+  urls:
+  - /**/*.css
+  - /auth/**
+  - /admin/user/mobile/**
+  - /refresh/**
+  - /swagger-ui.html
+  - /swagger-resources/**
+  - /*/v2/api-docs
+  - /webjars/**
