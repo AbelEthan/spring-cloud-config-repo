@@ -4,7 +4,7 @@ spring:
       charset: UTF-8
   datasource:
     url: jdbc:mysql://120.79.244.56:3306/cloud?characterEncoding=utf8&useSSL=false
-brigade：
+brigade:
   ignore:
     urls:
     - /**/*.css
