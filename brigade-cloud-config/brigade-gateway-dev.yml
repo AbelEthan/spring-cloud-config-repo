@@ -4,13 +4,14 @@ spring:
       charset: UTF-8
   datasource:
     url: jdbc:mysql://120.79.244.56:3306/cloud?characterEncoding=utf8&useSSL=false
-ignore:
-  urls:
-  - /**/*.css
-  - /auth/**
-  - /admin/user/mobile/**
-  - /refresh/**
-  - /swagger-ui.html
-  - /swagger-resources/**
-  - /*/v2/api-docs
-  - /webjars/**
+brigade：
+  ignore:
+    urls:
+    - /**/*.css
+    - /auth/**
+    - /admin/user/mobile/**
+    - /refresh/**
+    - /swagger-ui.html
+    - /swagger-resources/**
+    - /*/v2/api-docs
+    - /webjars/**
