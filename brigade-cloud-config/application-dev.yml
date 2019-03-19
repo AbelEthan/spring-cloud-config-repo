@@ -123,34 +123,34 @@ info:
   软件著作权: brigade重庆文旅分布式微服务平台
   作者: AbelEthan
   邮件: abelethan@126.com, abelethan@sina.cn, abelethan@aliyun.com, abelethan@vip.qq.com
-
-ignore:
-  urls:
-  - /token/**
-  - /mobile/**
-  - /**/*.css
-  - /auth/**
-  - /refresh/**
-  - /swagger-ui.html
-  - /swagger-resources/**
-  - /*/v2/api-docs
-  - /webjars/**
-  auth:
-    jwt:
-      expiredRemainMinutes: 20
-      expiredMinutes: 120
-  aliyun:
-    key:
-      accessKeyId: 'your aliyun accessKeyId'
-      accessKeySecret: 'your aliyun accessKeySecret'
-    rocketMq:
-      namesrvAddr: http://192.168.0.135:9876
-    sms:
-      signName: 快乐学习网
-      regionId: cn-beijing
-      endpoint:
-      endpointName: cn-beijing
-      product: 'your sms product'
-      domain: dysmsapi.aliyuncs.com
-  zk:
-    zkAddressList: 192.168.0.158:2181
+brigade:
+  ignore:
+    urls:
+    - /token/**
+    - /mobile/**
+    - /**/*.css
+    - /auth/**
+    - /refresh/**
+    - /swagger-ui.html
+    - /swagger-resources/**
+    - /*/v2/api-docs
+    - /webjars/**
+    auth:
+      jwt:
+        expiredRemainMinutes: 20
+        expiredMinutes: 120
+    aliyun:
+      key:
+        accessKeyId: 'your aliyun accessKeyId'
+        accessKeySecret: 'your aliyun accessKeySecret'
+      rocketMq:
+        namesrvAddr: http://192.168.0.135:9876
+      sms:
+        signName: 快乐学习网
+        regionId: cn-beijing
+        endpoint:
+        endpointName: cn-beijing
+        product: 'your sms product'
+        domain: dysmsapi.aliyuncs.com
+    zk:
+      zkAddressList: 192.168.0.158:2181
