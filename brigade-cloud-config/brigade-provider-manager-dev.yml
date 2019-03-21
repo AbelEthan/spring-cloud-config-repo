@@ -2,6 +2,7 @@ spring:
   mvc:
     date-format: yyyy-MM-dd HH:mm:ss
   jackson:
+    time-zone: GMT+8
     joda-date-time-format: yyyy-MM-dd HH:mm:ss
     date-format: yyyy-MM-dd HH:mm:ss
   cache:
