@@ -119,10 +119,10 @@ hystrix:
         isolation:
           thread:
             timeoutInMilliseconds: 60000
-info:
-  软件著作权: brigade重庆文旅分布式微服务平台
-  作者: AbelEthan
-  邮件: abelethan@126.com, abelethan@sina.cn, abelethan@aliyun.com, abelethan@vip.qq.com
+# info:
+#   软件著作权: brigade重庆文旅分布式微服务平台
+#   作者: AbelEthan
+#   邮件: abelethan@126.com, abelethan@sina.cn, abelethan@aliyun.com, abelethan@vip.qq.com
 brigade:
   ignore:
     urls:
