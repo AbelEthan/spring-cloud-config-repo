@@ -89,7 +89,7 @@ spring:
 ribbon:
   eager-load:
     enabled: true
-    clients: brigade-provider-manager,brigade-auth
+    clients: brigade-provider-manager,brigade-auth,brigade-provider-display
   Httpclient:
     enabled: true
   OkHttp:
