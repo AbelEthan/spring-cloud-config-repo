@@ -1,0 +1,28 @@
+spring:
+  mvc:
+    date-format: yyyy-MM-dd HH:mm:ss
+  jackson:
+    time-zone: GMT+8
+    joda-date-time-format: yyyy-MM-dd HH:mm:ss
+    date-format: yyyy-MM-dd HH:mm:ss
+  cache:
+    cache-names: manager-cache
+  datasource:
+    url: jdbc:mysql://120.79.244.56:3306/cloud?characterEncoding=utf8&useSSL=false
+
+# mybatis:
+#   type-aliases-package: io.brigade.provider.model.domain
+#   mapper-locations: classpath:mapper/*.xml,classpath*:sdk/mapper/*.xml
+#   configuration:
+#     map-underscore-to-camel-case: true
+
+# mapper:
+#   #mappers: io.brigade.core.mybatis.MyMapper
+#   not-empty: false
+#   identity: MYSQL
+
+pagehelper:
+  helperDialect: mysql
+  reasonable: true
+  supportMethodsArguments: true
+  params: count=countSql
