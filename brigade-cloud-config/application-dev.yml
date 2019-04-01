@@ -29,8 +29,8 @@ spring:
   redis:
     cache:
       expiration: 3601
-    host: 192.168.0.158
-    password: scjjcredis
+    host: 120.79.244.56
+    password: Abel123
     port: 6379
     timeout: 5000
     jedis:
