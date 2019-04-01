@@ -8,7 +8,7 @@ brigade:
   ignore:
     urls:
     - /**/*.css
-    - /upload/*.png
+    - /image/**
     - /auth/**
     - /admin/user/mobile/**
     - /refresh/**
