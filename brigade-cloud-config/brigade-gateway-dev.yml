@@ -17,4 +17,4 @@ brigade:
     - /*/v2/api-docs
     - /webjars/**
     - /actuator/**
-    - /display/heritage/upload
+    - /sdk/config/upload
