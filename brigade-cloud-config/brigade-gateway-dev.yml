@@ -8,7 +8,6 @@ brigade:
   ignore:
     urls:
     - /**/*.css
-    - /image/**
     - /auth/**
     - /admin/user/mobile/**
     - /refresh/**
@@ -17,4 +16,5 @@ brigade:
     - /*/v2/api-docs
     - /webjars/**
     - /actuator/**
+    - /image/**
     - /sdk/config/upload
