@@ -8,7 +8,7 @@ pring:
   cache:
     cache-names: manager-cache
   datasource:
-    url: jdbc:mysql://120.79.244.56:3306/message?characterEncoding=utf8&useSSL=false
+    url: jdbc:mysql://120.79.244.56:3306/message_board?characterEncoding=utf8&useSSL=false
 
 # mybatis:
 #   type-aliases-package: io.brigade.provider.model.domain
