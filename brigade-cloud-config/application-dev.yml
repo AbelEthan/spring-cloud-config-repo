@@ -22,7 +22,7 @@ spring:
   rabbitmq:
     host: 120.79.244.56
     port: 5672
-    username: cloud-demo
+    username: cultural-tourism
     password: abelethan
     publisher-confirms: true
     publisher-returns: true
