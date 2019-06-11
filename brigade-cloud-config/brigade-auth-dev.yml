@@ -6,5 +6,5 @@ spring:
     date-format: yyyy-MM-dd HH:mm:ss
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://120.79.244.56:3306/cloud?characterEncoding=utf8&useSSL=false
-    #url: jdbc:mysql://192.168.1.8:3306/cloud?characterEncoding=utf8&useSSL=false
+    #url: jdbc:mysql://120.79.244.56:3306/cloud?characterEncoding=utf8&useSSL=false
+    url: jdbc:mysql://192.168.1.5:3306/cloud?characterEncoding=utf8&useSSL=false
