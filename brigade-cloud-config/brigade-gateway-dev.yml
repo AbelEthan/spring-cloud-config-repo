@@ -20,3 +20,4 @@ brigade:
     - /actuator/**
     - /image/**
     - /sdk/config/upload
+    -/*/webPlatform/**
