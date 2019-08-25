@@ -152,7 +152,7 @@ brigade:
         accessKeyId: 'your aliyun accessKeyId'
         accessKeySecret: 'your aliyun accessKeySecret'
       rocketMq:
-        namesrvAddr: http://192.168.0.135:9876
+        namesrvAddr: http://127.0.0.1:9876
       sms:
         signName: 快乐学习网
         regionId: cn-beijing
@@ -161,4 +161,4 @@ brigade:
         product: 'your sms product'
         domain: dysmsapi.aliyuncs.com
     zk:
-      zkAddressList: 192.168.0.158:2181
+      zkAddressList: 127.0.0.1:2181
