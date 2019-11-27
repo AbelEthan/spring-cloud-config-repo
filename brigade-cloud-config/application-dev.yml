@@ -29,7 +29,7 @@ spring:
   redis:
     cache:
       expiration: 3601
-    host: 192.168.31.235
+    host: 192.168.31.236
     password: Redis2019
     port: 6379
     timeout: 5000
