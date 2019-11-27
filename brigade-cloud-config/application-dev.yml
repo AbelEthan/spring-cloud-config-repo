@@ -20,17 +20,17 @@ spring:
     proxy-target-class: true
     auto: true
   rabbitmq:
-    host: 120.79.244.56
+    host: 192.168.31.236
     port: 5672
-    username: cultural-tourism
-    password: abelethan
+    username: brigade
+    password: Brigade2019
     publisher-confirms: true
     publisher-returns: true
   redis:
     cache:
       expiration: 3601
-    host: 120.79.244.56
-    password: Abel123
+    host: 192.168.31.235
+    password: Redis2019
     port: 6379
     timeout: 5000
     jedis:
