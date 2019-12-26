@@ -1,0 +1,22 @@
+spring:
+  http:
+    encoding:
+      charset: UTF-8
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/flwl?characterEncoding=utf8&useSSL=false
+brigade:
+  ignore:
+    urls:
+    - /**/*.css
+    - /auth/**
+    - /admin/user/mobile/**
+    - /refresh/**
+    - /doc.html
+    - /swagger-resources/**
+    - /*/v2/api-docs
+    - /*/v2/api-docs-ext
+    - /webjars/**
+    - /actuator/**
+    - /image/**
+    - /sdk/config/upload
+    - /*/webPlatform/**

@@ -1,0 +1,17 @@
+spring:
+  mvc:
+    date-format: yyyy-MM-dd HH:mm:ss
+  jackson:
+    time-zone: GMT+8
+    joda-date-time-format: yyyy-MM-dd HH:mm:ss
+    date-format: yyyy-MM-dd HH:mm:ss
+  cache:
+    cache-names: manager-cache
+  datasource:
+    url: jdbc:mysql://localhost:flwl/resource?characterEncoding=utf8&useSSL=false
+
+pagehelper:
+  helperDialect: mysql
+  reasonable: true
+  supportMethodsArguments: true
+  params: count=countSql

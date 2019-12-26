@@ -1,0 +1,164 @@
+server:
+  tomcat:
+    uri-encoding: UTF-8
+    remote-ip-header: x-forwarded-for
+  use-forward-headers: true
+
+management:
+  security:
+    enabled: false
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: ALWAYS
+
+spring:
+  aop:
+    proxy-target-class: true
+    auto: true
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: flwl
+    password: Rabbit2019
+    publisher-confirms: true
+    publisher-returns: true
+  redis:
+    cache:
+      expiration: 3601
+    host: localhost
+    password:
+    port: 6379
+    timeout: 5000
+    jedis:
+      pool:
+        max-idle: 1000
+        min-idle: 100
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    filters: stat,wall
+    druid:
+      initial-size: 50
+      min-idle: 50
+      max-active: 100
+      test-on-borrow: true
+      time-between-eviction-runs-millis: 60000
+      min-evictable-idle-time-millis: 300000
+      web-stat-filter:
+        exclusions: '*.js,*.gif,*.jpg,*.png,*.css,*.ico,/druid/*'
+      stat-view-servlet:
+        allow:
+        login-username: root
+        login-password: Flwl2019
+  mail:
+    host: smtp.qq.com
+    username: abelethan@vip.qq.com
+    password: wttscxmovqcidida
+    port: 25
+    protocol: smtp
+    test-connection: false
+    default-encoding: UTF-8
+    properties:
+      mail:
+        debug: true
+        smtp:
+          auth: true
+          connectiontimeout: 10000
+          timeout: 10000
+          writetimeout: 10000
+          socketFactory:
+            class: javax.net.ssl.SSLSocketFactory
+            port: 25
+          starttls:
+            enable: true
+            required: true
+  boot:
+    admin:
+      username: admin
+      password: flwl
+  zipkin:
+    rabbitmq:
+      queue: zipkin
+  sleuth:
+    sampler:
+      percentage: 0.2
+
+ribbon:
+  eager-load:
+    enabled: true
+    clients: brigade-provider-manager,brigade-auth,brigade-provider-resource,brigade-provider-sdk
+  Httpclient:
+    enabled: true
+  OkHttp:
+    enabled: false
+  ReadTimeout: 10000
+  ConnectTimeout: 10000
+
+feign:
+  hystrix:
+    enabled: false
+  okhttp:
+    enabled: false
+  httpclient:
+    enabled: true
+  client:
+    config:
+      feignName:
+        connectTimeout: 30000
+        readTimeout: 30000
+  compression:
+    request:
+      enabled: true
+    response:
+      enabled: true
+hystrix:
+  threadpool:
+    default:
+      coreSize: 500
+      maxQueueSize: 1000
+      queueSizeRejectionThreshold: 800
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 60000
+# info:
+#   软件著作权: brigade重庆文旅分布式微服务平台
+#   作者: AbelEthan
+#   邮件: abelethan@126.com, abelethan@sina.cn, abelethan@aliyun.com, abelethan@vip.qq.com
+brigade:
+  ignore:
+    urls:
+    - /token/**
+    - /mobile/**
+    - /**/*.css
+    - /auth/**
+    - /refresh/**
+    - /doc.html
+    - /swagger-resources/**
+    - /*/v2/api-docs
+    - /*/v2/api-docs-ext
+    - /webjars/**
+    auth:
+      jwt:
+        expiredRemainMinutes: 20
+        expiredMinutes: 120
+    aliyun:
+      key:
+        accessKeyId: 'your aliyun accessKeyId'
+        accessKeySecret: 'your aliyun accessKeySecret'
+      rocketMq:
+        namesrvAddr: http://127.0.0.1:9876
+      sms:
+        signName: 快乐学习网
+        regionId: cn-beijing
+        endpoint:
+        endpointName: cn-beijing
+        product: 'your sms product'
+        domain: dysmsapi.aliyuncs.com
+    zk:
+      zkAddressList: 127.0.0.1:2181
