@@ -8,7 +8,7 @@ spring:
   cache:
     cache-names: manager-cache
   datasource:
-    url: jdbc:mysql://localhost:flwl/resource?characterEncoding=utf8&useSSL=false
+    url: jdbc:mysql://localhost:3306/flwl?characterEncoding=utf8&useSSL=false
 
 pagehelper:
   helperDialect: mysql
