@@ -1,0 +1,7 @@
+name: neo-config-pro.com
+## 用户的配置信息
+nc:
+  user:
+    id: 007   # 用户 ID
+    name: spring-client    # 用户名称
+    age: 22
